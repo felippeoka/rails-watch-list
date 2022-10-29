@@ -1,6 +1,9 @@
 <div> 
   <h1  class="d-flex justify-content-center"><%= @list.name %></h1>
     <div class="mx-auto" style="width: 600px;">
+
+      <%= image_tag movie.poster_url %>
+
       <% @list.movies.each do |movie| %>
             <div class="card-product mt-3">
               <div class="card-product-infos">
@@ -8,7 +11,9 @@
                 <p><%= movie.overview  %></p>
                 <% @list.bookmarks.each do |bookmark| %>
                   <p>Comment: <%= bookmark.comment  %></p>
+                  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
                 <% end %>
+
           </div>
         </div>
           </li>
